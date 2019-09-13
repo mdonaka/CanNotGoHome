@@ -3,6 +3,7 @@
 
 import requests
 import csv
+import numpy as np
 
 
 def readCSV():
@@ -18,6 +19,7 @@ def getURLText(URL, auth):
     get_url_info = requests.get(URL, auth=("mpcman", "1958"))
     return get_url_info.text
 
+
 def getValList(tableText):
     sp = text.split("table")
     # sp[2]が正しい
@@ -25,7 +27,7 @@ def getValList(tableText):
     val = [v.split("</td")[0] for v in valLL]
 
     lst = []
-    for i in range(7,len(val), 4):
+    for i in range(7, len(val), 4):
         if "gt" in val[i]:
             lst.append(int(val[i].split(";")[1]))
         else:
@@ -41,4 +43,4 @@ if __name__ == "__main__":
 
     print("Content-Type: text/plain")
     print()
-    print(val)
+    print(np.sum(val))
