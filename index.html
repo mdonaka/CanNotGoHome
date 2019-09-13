@@ -2,15 +2,14 @@
 <html>
 	<head>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title></title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>現在の得点</title>
+		<link rel="stylesheet" href="./css.css" type="text/css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	</head>
 	<body>
-		<div id="value"></div>
 		<script>
-
 			$(function() {
 				$.ajax({
 					url: './cgi-bin/rec.py',
@@ -28,7 +27,7 @@
 				.always(function() {
 				});
 			})
-
 		</script>
+		<div id="value">now loading...</div>
 	</body>
 </html>
