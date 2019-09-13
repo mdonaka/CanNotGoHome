@@ -1,3 +1,6 @@
+#!/home/mdo/.pyenv/versions/anaconda3-5.3.1/bin/python3
+# -*- coding: utf-8 -*-
+
 import requests
 import csv
 
@@ -36,4 +39,6 @@ if __name__ == "__main__":
     text = getURLText(url, (id, pas))
     val = getValList(text)
 
+    print("Content-Type: text/plain")
+    print()
     print(val)
